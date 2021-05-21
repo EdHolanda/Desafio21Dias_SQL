@@ -1,0 +1,26 @@
+Tabelas
+Clientes
+	Id
+	Nome
+	CPF
+	Endereço
+	Telefone
+	Email
+	Biografia
+	Data_Cadastro
+
+Produto
+	Id
+	Nome
+	Descrição
+	Valor
+	Estoque
+	Data_Cadastro
+	Data_Alteracao
+	
+
+
+
+SELECT * FROM sys.columns WHERE object_id = object_id('Clientes')
+
+sp_help Produtos

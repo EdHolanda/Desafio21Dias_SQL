@@ -1,0 +1,30 @@
+Exercício Select
+
+Faça um seletor de dados onde mostre um relatório com as informações: nome cliente, tel, endereço e cep 
+
+1.Buscando pelo Cliente
+
+select 
+	C.Nome as [Cliente], 
+	C.Telefone,
+	E.Rua + ', ' + E.Numero + ', ' + E.Complemento + ', ' + E.Bairro + ', ' + E.Cidade + '-' + E.Estado as [Endereço], 
+	E.CEP
+
+ from 
+	Clientes C
+	inner join Clientes_Enderecos CE on (C.ID = CE.IdCliente)
+	inner join Enderecos E on (CE.IdEndereco = E.ID)
+
+
+2.Buscando pelo Endereço
+
+select 
+	E.Rua + ', ' + E.Numero + ', ' + E.Complemento + ', ' + E.Bairro + ', ' + E.Cidade + '-' + E.Estado as [Endereço], 
+	E.CEP,
+	C.Nome as [Cliente], 
+	C.Telefone
+
+ from 
+	Enderecos E
+	inner join Clientes_Enderecos CE on (CE.IdEndereco = E.ID)
+	inner join Clientes C on (C.ID = CE.IdCliente)

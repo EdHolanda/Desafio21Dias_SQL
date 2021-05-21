@@ -1,0 +1,16 @@
+Exercício
+
+Faça um relatório que mostre o valor total sumarizado de todas as vendas de um produto específico
+
+1.
+select 
+		PR.Nome as [Produto], 
+		SUM(PP.Valor * PP.Quantidade) as Valor_Total_Vendido
+
+	from 
+		Pedidos P
+		inner join Pedidos_Produtos PP on (P.ID = PP.IdPedido)
+		inner join Produtos PR on (PP.IdProduto = PR.ID)
+	
+	group by
+		PR.Nome
