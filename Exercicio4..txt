@@ -1,0 +1,45 @@
+Dado que eu tenha uma tabela para armazenar as frutas de um armazém. Faça um código SQL para inserir 10 produtos na tabela. Esse código precisa rodar em uma única vez.
+Os atributos da entidade fruta, serão:
+
+
+Id, Nome, Descrição, Valor, Valor unidade, Quantidade, Data de validade
+
+
+
+begin tran
+
+truncate table produtos
+
+commit
+
+insert into 
+	Produtos (Nome, Descricao, Valor, Unidade, Quantidade_Estoque, Data_Validade)
+		values 
+			('banana', '', 10, 'un', 20, '2021-05-31'),
+			('maca', '', 20, 'un', 20, '2021-05-31'),
+			('pera', '', 30, 'un', 20, '2021-05-31'),
+			('uva', '', 60, 'cacho', 20, '2021-05-31'),
+			('goiaba', '', 50, 'un', 20, '2021-05-31'),
+			('mamao', '', 10, 'un', 20, '2021-05-31'),
+			('manga', '', 40, 'un', 20, '2021-05-31'),
+			('morango', '', 50, 'cx', 20, '2021-05-31'),
+			('caju', '',20, 'un', 20, '2021-05-31'),
+			('melao', '', 40, 'un', 20, '2021-05-31')
+
+
+
+select * from Produtos
+
+
+
+
+
+insert into Produtos_Novos (Nome, Descricao, Valor, Unidade, Quantidade_Estoque, Data_Validade)
+
+ (select Nome, Descricao, Valor, Unidade, Quantidade_Estoque, Data_Validade from Produtos) 
+
+
+2. Dado que eu tenha as seguintes tabelas:
+	Usuarios,compras, produtos
+Faça um código para criar as tabelas
+Faça um código separado para inserir e vincular a compra do usuario ao produto

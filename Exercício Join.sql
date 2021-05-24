@@ -1,10 +1,14 @@
-select * from clientes
+select *  from clientes
 
 select * from produtos
 
 select * from pedidos
 
 select * from Pedidos_Produtos
+
+select * from Enderecos
+
+
 
 select
 		p.ID as Pedido, c.Nome as Cliente, pr.Nome as Produto, ppr.Quantidade, ppr.Valor, p.TotalPedido, p.DataPedido, e.*

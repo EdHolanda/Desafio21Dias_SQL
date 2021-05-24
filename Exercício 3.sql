@@ -12,7 +12,8 @@ select distinct
 
 			from 
 				Pedidos P
-				inner join Pedidos_Produtos PP on (P.ID = PP.IdPedido)
+			
+			inner join Pedidos_Produtos PP on (P.ID = PP.IdPedido)
 				inner join Produtos PR on (PP.IdProduto = PR.ID)
 				inner join Enderecos E on (P.IdEnderecoEntrega = E.ID)
 
